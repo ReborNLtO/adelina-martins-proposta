@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Adelina Martins — Relatório de Entrega</title>
+<meta name="description" content="Relatório completo de entrega: diagnóstico, sistema de marca, landing page, kit de Instagram e prompts de logo." />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root{
+    --green-dark:#122A22; --green:#1B3B2F; --gold:#C9A227; --gold-light:#E4C568;
+    --cream:#F6F1E4; --cream-warm:#EFE6D1; --ink:#1D2620; --ink-soft:#4A5750;
+    --radius:20px; --shadow-soft:0 10px 30px rgba(18,42,34,.08); --max:920px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Jost',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;}
+  h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;color:var(--green);}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  a{color:var(--green);}
+  code, .mono{font-family:'JetBrains Mono',monospace;}
+
+  header.cover{background:linear-gradient(180deg,var(--green-dark),var(--green));color:var(--cream);padding:90px 0 70px;text-align:center;}
+  header.cover .monogram{width:80px;height:80px;margin:0 auto 24px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--gold);}
+  header.cover .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--gold-light);font-weight:600;}
+  header.cover h1{color:var(--cream);font-size:clamp(2rem,4vw,3rem);margin:12px 0 10px;}
+  header.cover p{color:#C7D0C9;font-size:.95rem;}
+  header.cover .meta{margin-top:30px;font-size:.78rem;color:#9FB0A6;letter-spacing:.04em;}
+
+  nav.toc{background:var(--cream-warm);padding:24px 0;border-bottom:1px solid rgba(27,59,47,.1);}
+  nav.toc .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;}
+  nav.toc a{font-size:.82rem;color:var(--green);text-decoration:none;border-bottom:1px solid transparent;}
+  nav.toc a:hover{border-color:var(--gold);}
+
+  section{padding:64px 0;border-bottom:1px solid rgba(27,59,47,.08);}
+  section:last-of-type{border-bottom:none;}
+  .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;color:var(--gold);font-weight:600;}
+  h2{font-size:1.9rem;margin:8px 0 20px;}
+  h3{font-size:1.25rem;margin:28px 0 10px;}
+  p{color:var(--ink-soft);margin-bottom:12px;}
+
+  .diag-table{width:100%;border-collapse:collapse;margin-top:16px;}
+  .diag-table th, .diag-table td{text-align:left;padding:12px 14px;font-size:.9rem;border-bottom:1px solid rgba(27,59,47,.08);}
+  .diag-table th{color:var(--green);font-weight:600;background:var(--cream-warm);}
+
+  .card{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-soft);margin-bottom:20px;}
+  .card h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--green);margin-bottom:6px;}
+  .card .obj{font-size:.8rem;color:var(--ink-soft);margin-bottom:14px;font-style:italic;}
+
+  .prompt-box{background:var(--green-dark);color:#DCE4DE;border-radius:14px;padding:18px 20px;font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;white-space:pre-wrap;border-left:3px solid var(--gold);}
+  .prompt-label{display:inline-block;font-family:'Jost',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light);margin-bottom:8px;}
+
+  .caption-box{background:var(--cream-warm);border-radius:14px;padding:16px 18px;margin-top:12px;font-size:.85rem;color:var(--ink-soft);white-space:pre-wrap;}
+
+  .checklist{list-style:none;margin-top:14px;}
+  .checklist li{padding:8px 0 8px 28px;position:relative;font-size:.9rem;color:var(--ink-soft);border-bottom:1px solid rgba(27,59,47,.06);}
+  .checklist li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700;}
+
+  .pricing{background:linear-gradient(160deg,var(--green),var(--green-dark));color:var(--cream);border-radius:var(--radius);padding:40px;text-align:center;}
+  .pricing h2{color:var(--cream);}
+  .pricing .value{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--gold-light);margin:16px 0;}
+  .pricing .note{font-size:.8rem;color:#9FB0A6;margin-top:20px;}
+  .pricing-list{text-align:left;max-width:520px;margin:24px auto 0;}
+  .pricing-list li{color:#DCE4DE;font-size:.9rem;padding:6px 0;}
+
+  footer{background:var(--green-dark);color:#9FB0A6;text-align:center;padding:36px 0;font-size:.8rem;}
+  footer a{color:var(--gold-light);}
+
+  @media (max-width:700px){
+    .diag-table{font-size:.8rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="monogram">AM</div>
+    <span class="eyebrow">Relatório de Entrega</span>
+    <h1>Adelina Martins — Marmitas Fitness</h1>
+    <p>Rebrand comercial: diagnóstico, sistema de marca e entregáveis prontos para publicar</p>
+    <div class="meta">Preparado por Everton Alves · Julho 2026 · Serra/ES</div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#diagnostico">Diagnóstico</a>
+    <a href="#metodologia">Metodologia</a>
+    <a href="#sistema-marca">Sistema de Marca</a>
+    <a href="#landing">Landing Page</a>
+    <a href="#instagram">Kit Instagram</a>
+    <a href="#logo">Logo — Prompts</a>
+    <a href="#investimento">Investimento</a>
+  </div>
+</nav>
+
+<section id="diagnostico">
+  <div class="wrap">
+    <span class="eyebrow">01</span>
+    <h2>Diagnóstico</h2>
+    <p>Análise da marca a partir do material existente (logo, embalagens, cardápio e perfil real <a href="https://instagram.com/am_marmitas" target="_blank">@am_marmitas</a>, Serra/ES).</p>
+    <table class="diag-table">
+      <tr><th>Área</th><th>Situação encontrada</th></tr>
+      <tr><td>Logo</td><td>Conceito forte (monograma AM, moldura floral, tagline) — mantida sem alteração</td></tr>
+      <tr><td>Peças derivadas</td><td>Embalagem e cardápio com acabamento/tipografia abaixo do padrão da logo</td></tr>
+      <tr><td>Presença digital</td><td>Restrita ao Instagram — sem landing page própria nem captura de contato</td></tr>
+      <tr><td>Comunidade</td><td>154 seguidores, engajamento real e qualificado (comentários de intenção de compra)</td></tr>
+      <tr><td>Diferencial</td><td>Cardápio com prescrição de nutricionista — pouco comunicado hoje</td></tr>
+      <tr><td>Voz de marca</td><td>Pessoal, primeira pessoa, história real da fundadora — ativo a preservar</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="metodologia">
+  <div class="wrap">
+    <span class="eyebrow">02</span>
+    <h2>Metodologia</h2>
+    <p>O sistema de marca não foi escolhido "no olho". Validamos paleta, tipografia e estilo com uma base de dados de design de mercado (161 paletas, 57 pares tipográficos, 67 estilos catalogados por setor), cruzando com o contexto real do negócio.</p>
+    <ul class="checklist">
+      <li>Estilo confirmado: <strong>Organic Biophilic</strong> — arquétipo reconhecido para marcas de alimentação orgânica/wellness</li>
+      <li>Paleta confirmada: <strong>Earth Green + Harvest Gold</strong> — arquétipo do setor agro/alimentação premium, mantendo os tons exatos da logo do cliente</li>
+      <li>Tipografia confirmada: par <strong>Restaurant Menu</strong> (serifada elegante + sans limpa) — padrão de culinária/hospitalidade</li>
+      <li>Estrutura da landing page validada contra padrões de conversão (Hero + Prova Social + Captura de Lead)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="sistema-marca">
+  <div class="wrap">
+    <span class="eyebrow">03</span>
+    <h2>Sistema de Marca</h2>
+    <div class="card">
+      <h4>Paleta</h4>
+      <p class="mono" style="font-size:.85rem;">Verde principal #1B3B2F · Verde escuro #122A22 · Dourado #C9A227 · Dourado claro #E4C568 · Creme #F6F1E4</p>
+    </div>
+    <div class="card">
+      <h4>Tipografia</h4>
+      <p>Título: Cormorant Garamond (serifada, elegante) · Corpo: Jost (sans-serif limpa) — variante do par oficial "Restaurant Menu" da base de dados.</p>
+    </div>
+    <div class="card">
+      <h4>Estilo &amp; acabamento</h4>
+      <p>Organic Biophilic: cantos arredondados orgânicos (20px+), sombras naturais suaves, formas assimétricas sutis — nada geométrico ou "corporativo frio".</p>
+    </div>
+  </div>
+</section>
+
+<section id="landing">
+  <div class="wrap">
+    <span class="eyebrow">04</span>
+    <h2>Landing Page</h2>
+    <p>Página própria com captura de lead. Estrutura: Hero → História da fundadora → Diferenciais → Portfólio/Cardápio filtrável → Prova social → Formulário (abre WhatsApp automaticamente).</p>
+    <ul class="checklist">
+      <li>Formulário com validação inline e feedback de envio (loading → confirmação)</li>
+      <li>Portfólio filtrável por categoria: Frango, Carne Bovina, Peixes, Suína, Massas, Vegetarianas</li>
+      <li>Botão flutuante de WhatsApp em todas as telas</li>
+      <li>Responsiva — testada em mobile e desktop</li>
+    </ul>
+    <p style="margin-top:16px;"><a href="index.html" target="_blank">→ Abrir a landing page completa</a></p>
+  </div>
+</section>
+
+<section id="instagram">
+  <div class="wrap">
+    <span class="eyebrow">05</span>
+    <h2>Kit de Lançamento — Instagram</h2>
+    <p>6 peças com prompt de imagem (gerar no Nano Banana) e legenda pronta, na ordem de publicação recomendada.</p>
+
+    <div class="card">
+      <h4>1 · Post de Apresentação (rebrand)</h4>
+      <p class="obj">Objetivo: anunciar a nova identidade sem perder a voz pessoal da Adelina</p>
+      <span class="prompt-label">Prompt de imagem</span>
+      <div class="prompt-box">Square 1:1 format. Elegant flat-lay product photo of a meal-prep container with grilled chicken, sweet potato and green beans, on a warm cream linen surface. Deep forest green (#1B3B2F) card overlay with soft rounded corners (organic, not sharp rectangle) in the bottom third, with gold (#C9A227) serif text rendered exactly: "Adelina Martins" / "Marmitas Fitness", plus a thin gold line separator. The meal-prep container itself has gently rounded edges. Soft natural window light casting a subtle organic shadow beneath the container, editorial food photography style, no other text.</div>
+      <div class="caption-box">Novo capítulo, mesma essência. 💚 A Adelina Martins ganhou uma nova cara — mas continua sendo a mesma cozinha feita com prescrição de nutricionista, ingredientes selecionados e muito cuidado. #AdelinaMartins #SaborNutricaoECuidado #MarmitaFitness</div>
+    </div>
+
+    <div class="card">
+      <h4>2 · Diferencial: Prescrição de Nutricionista</h4>
+      <p class="obj">Objetivo: comunicar o principal diferencial competitivo</p>
+      <span class="prompt-label">Prompt de imagem</span>
+      <div class="prompt-box">Vertical 4:5 portrait format. Split composition: nutrition consultation notepad on the left, finished healthy meal-prep container on the right. Deep green (#122A22) background, gold (#C9A227) divider. Headline rendered exactly: "Cardápio com prescrição de nutricionista", inside a soft rounded-corner card casting a gentle natural shadow.</div>
+      <div class="caption-box">Aqui não é "achismo fit". 📋 Cada cardápio pode seguir a prescrição da SUA nutricionista. #PrescricaoNutricional #MarmitaFit #NutricaoDeVerdade</div>
+    </div>
+
+    <div class="card">
+      <h4>3 · Cardápio da Semana (portfólio)</h4>
+      <p class="obj">Objetivo: mostrar variedade e direcionar tráfego para a landing page</p>
+      <span class="prompt-label">Prompt de imagem</span>
+      <div class="prompt-box">Square 1:1 format. Overhead flat-lay grid of 4 meal-prep containers with generous rounded corners: grilled chicken, beef stew, grilled fish, vegetarian eggplant lasagna. Rounded-pill label tags rendered exactly: "Frango", "Carne", "Peixe", "Vegetariana". Soft natural shadows beneath each container.</div>
+      <div class="caption-box">Frango, carne, peixe ou vegetariana — qual é a sua? 🍽️ Cardápio completo na nossa página (link na bio). #CardapioFit #MarmitasSaudaveis</div>
+    </div>
+
+    <div class="card">
+      <h4>4 · Bastidores / História da Fundadora</h4>
+      <p class="obj">Objetivo: humanizar a marca, reforçar conexão pessoal</p>
+      <span class="prompt-label">Prompt de imagem</span>
+      <div class="prompt-box">Vertical 4:5 portrait format. Warm candid photo of a woman in a home kitchen arranging fresh basil on a meal-prep container with softly rounded edges. Soft afternoon window light, shallow depth of field, forest-green/gold color grading, organic natural shadow.</div>
+      <div class="caption-box">Eu já estive exatamente onde você está. 🌿 Foi vivendo essa correria que criei a Adelina Martins — a solução que eu mesma precisava. #HistoriaReal #EmpreendedorismoFeminino</div>
+    </div>
+
+    <div class="card">
+      <h4>5 · Prova Social</h4>
+      <p class="obj">Objetivo: reforçar credibilidade com depoimento</p>
+      <span class="prompt-label">Prompt de imagem</span>
+      <div class="prompt-box">Square 1:1 format. Soft rounded-corner quote card floating with a gentle natural shadow on deep green (#122A22), thin gold decorative frame. Text rendered exactly: "Finalmente consigo manter a rotina alimentar sem perder tempo cozinhando." — Cliente Adelina Martins. Five gold stars above.</div>
+      <div class="caption-box">Isso é o que mais nos motiva. 💚 Se você também quer sentir essa diferença, chame no WhatsApp. #Depoimento #ResultadoReal</div>
+    </div>
+
+    <div class="card">
+      <h4>6 · CTA Final (peça seu cardápio)</h4>
+      <p class="obj">Objetivo: fechar o kit com chamada direta de conversão</p>
+      <span class="prompt-label">Prompt de imagem</span>
+      <div class="prompt-box">Square 1:1 format. Deep green (#1B3B2F) background, gold circular badge with soft organic glow/shadow, text rendered exactly: "Peça seu cardápio". Thin gold botanical line-art leaves around it. Below: "Sabor, Nutrição &amp; Cuidado". Organic soft shadows only.</div>
+      <div class="caption-box">Sua rotina saudável começa com uma mensagem. 📲 Link na bio para montar seu cardápio agora. #PecaSeuCardapio #MarmitaFit</div>
+    </div>
+  </div>
+</section>
+
+<section id="logo">
+  <div class="wrap">
+    <span class="eyebrow">06</span>
+    <h2>Logo — Prompts de Regeneração</h2>
+    <p>O conceito da logo é mantido. Os prompts abaixo corrigem acabamento e tipografia, e criam variações de uso.</p>
+
+    <div class="card">
+      <h4>1 · Regeneração Principal</h4>
+      <span class="prompt-label">Prompt de imagem</span>
+      <div class="prompt-box">Square 1:1 format. Professional embossed gold foil logo on deep forest green (#1B3B2F) textured background. Crown-like interlocking gold "AM" monogram, clean symmetric linework. Symmetrical botanical line-art (rosemary, flowers, cherry tomatoes) both sides. Serif text rendered exactly: "ADELINA MARTINS" / "MARMITAS FITNESS". Bottom gold ribbon: "Sabor, Nutrição &amp; Cuidado". No typos, no asymmetry, high-end packaging photography lighting.</div>
+    </div>
+    <div class="card">
+      <h4>2 · Monograma Isolado (avatar/favicon)</h4>
+      <span class="prompt-label">Prompt de imagem</span>
+      <div class="prompt-box">Square 1:1 format, centered. Just the crown-like "AM" monogram, clean and symmetric, thin gold circular border, no text, no botanical elements. Works at small icon sizes.</div>
+    </div>
+    <div class="card">
+      <h4>3 · Versão Fundo Claro</h4>
+      <span class="prompt-label">Prompt de imagem</span>
+      <div class="prompt-box">Same logo composition redrawn in solid deep green (#1B3B2F) line-art on warm cream (#F6F1E4) background. Flat vector-style, print-ready.</div>
+    </div>
+    <div class="card">
+      <h4>4 · Versão Monocromática</h4>
+      <span class="prompt-label">Prompt de imagem</span>
+      <div class="prompt-box">Same logo composition redrawn entirely in solid black line-art on white, single color, stamp/print-ready.</div>
+    </div>
+  </div>
+</section>
+
+<section id="investimento">
+  <div class="wrap">
+    <div class="pricing">
+      <span class="eyebrow" style="color:var(--gold-light)">07</span>
+      <h2>Investimento</h2>
+      <div class="value">[VALOR A DEFINIR]</div>
+      <ul class="pricing-list">
+        <li>✓ Landing page completa (portfólio + captura de lead)</li>
+        <li>✓ Kit de lançamento Instagram — 6 peças (prompt + copy)</li>
+        <li>✓ Sistema de marca validado (paleta, tipografia, estilo)</li>
+        <li>✓ Kit de prompts para regeneração da logo — 4 variações</li>
+        <li>✓ Documentação completa para uso contínuo</li>
+      </ul>
+      <p class="note">Valor a ser preenchido por Everton Alves antes do envio ao cliente — este relatório não inclui precificação automática.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Adelina Martins Marmitas Fitness · Serra/ES · <a href="https://instagram.com/am_marmitas" target="_blank">@am_marmitas</a><br/>
+  Relatório preparado por Everton Alves
+</footer>
+
+</body>
+</html>

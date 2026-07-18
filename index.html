@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Adelina Martins — Marmitas Fitness | Sabor, Nutrição & Cuidado</title>
+<meta name="description" content="Marmitas fitness com prescrição de nutricionista em Serra/ES. Cardápio equilibrado, ingredientes selecionados, feito com cuidado — peça seu plano personalizado." />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap');
+
+  :root{
+    --green-dark:#122A22;
+    --green:#1B3B2F;
+    --green-light:#2C5645;
+    --gold:#C9A227;
+    --gold-light:#E4C568;
+    --cream:#F6F1E4;
+    --cream-warm:#EFE6D1;
+    --ink:#1D2620;
+    --ink-soft:#4A5750;
+    --radius:20px;
+    --shadow-soft:0 10px 30px rgba(18,42,34,.08);
+    --shadow-soft-dark:0 12px 32px rgba(0,0,0,.28);
+    --max:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost', system-ui, -apple-system, sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-weight:600;
+    letter-spacing:.01em;
+  }
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.72rem;
+    color:var(--gold);
+    font-weight:600;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 28px;
+    border-radius:999px;
+    font-size:.95rem;
+    font-weight:500;
+    letter-spacing:.02em;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-gold{background:var(--gold); color:var(--green-dark);}
+  .btn-gold:hover{background:var(--gold-light); box-shadow:0 8px 20px rgba(201,162,39,.35);}
+  .btn-outline{border-color:var(--cream); color:var(--cream); background:transparent;}
+  .btn-outline:hover{background:rgba(246,241,228,.1);}
+  .btn-outline-dark{border-color:var(--green); color:var(--green); background:transparent;}
+  .btn-outline-dark:hover{background:rgba(27,59,47,.06);}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(18,42,34,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(201,162,39,.25);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand img{height:46px; width:auto;}
+  .brand-fallback{
+    height:46px; width:46px; flex-shrink:0;
+  }
+  .brand-name{color:var(--cream); font-size:.95rem; letter-spacing:.03em;}
+  .brand-name b{color:var(--gold-light); display:block; font-family:'Cormorant Garamond', serif; font-size:1.15rem; font-weight:700;}
+  nav.links{display:flex; gap:32px;}
+  nav.links a{color:var(--cream); font-size:.88rem; opacity:.85; transition:opacity .15s;}
+  nav.links a:hover{opacity:1; color:var(--gold-light);}
+  .nav-actions{display:flex; align-items:center; gap:14px;}
+  .nav-toggle{display:none;}
+
+  @media (max-width:860px){
+    nav.links{display:none;}
+    .nav-actions .btn span.long{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      radial-gradient(circle at 15% 20%, rgba(201,162,39,.12), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(201,162,39,.10), transparent 50%),
+      linear-gradient(180deg, var(--green-dark), var(--green));
+    color:var(--cream);
+    padding:90px 0 70px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:50px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem, 4.2vw, 3.4rem);
+    line-height:1.12;
+    color:var(--cream);
+    margin:14px 0 20px;
+  }
+  .hero h1 em{color:var(--gold-light); font-style:normal;}
+  .hero p.lead{
+    font-size:1.05rem;
+    color:#D7DED8;
+    max-width:46ch;
+    margin-bottom:30px;
+  }
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap;}
+  .hero-badges{
+    display:flex; gap:28px; margin-top:42px; flex-wrap:wrap;
+  }
+  .hero-badges div{font-size:.8rem; color:#C7D0C9;}
+  .hero-badges b{display:block; font-family:'Cormorant Garamond', serif; font-size:1.6rem; color:var(--gold-light);}
+
+  .hero-visual{
+    position:relative;
+    border-radius:38% 62% 61% 39% / 42% 38% 62% 58%;
+    overflow:hidden;
+    border:1px solid rgba(201,162,39,.35);
+    aspect-ratio:4/5;
+    box-shadow:0 24px 60px rgba(0,0,0,.35);
+    background:
+      linear-gradient(160deg, rgba(201,162,39,.18), transparent 60%),
+      linear-gradient(200deg, #0F241D, #24493A);
+  }
+  .hero-visual .ph-icon{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-size:4.2rem; opacity:.5;
+  }
+  .hero-visual .ph-caption{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:16px 20px;
+    background:linear-gradient(0deg, rgba(9,20,16,.85), transparent);
+    font-size:.75rem; color:#DCE4DE; letter-spacing:.03em;
+  }
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-visual{max-width:420px;}
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:80px 0;}
+  .section-head{max-width:640px; margin-bottom:46px;}
+  .section-head h2{font-size:clamp(1.8rem, 3vw, 2.5rem); color:var(--green); margin-top:10px;}
+  .section-head p{color:var(--ink-soft); margin-top:14px; font-size:1rem;}
+  .section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+
+  /* ---------- Sobre / Fundadora ---------- */
+  .sobre{background:var(--cream-warm);}
+  .sobre .wrap{
+    display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; align-items:center;
+  }
+  .founder-photo{
+    aspect-ratio:3/4;
+    border-radius:62% 38% 41% 59% / 38% 42% 58% 62%;
+    background:linear-gradient(160deg, #DCD0AC, #C9A227 140%);
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(27,59,47,.15);
+    box-shadow:var(--shadow-soft);
+  }
+  .founder-photo .ph-icon{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-size:3.6rem; color:rgba(27,59,47,.45);
+  }
+  .founder-photo .ph-caption{
+    position:absolute; left:0; right:0; bottom:0; padding:14px 18px;
+    background:linear-gradient(0deg, rgba(27,59,47,.75), transparent);
+    color:#F6F1E4; font-size:.72rem; letter-spacing:.03em;
+  }
+  .sobre blockquote{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.5rem;
+    color:var(--green);
+    line-height:1.5;
+    margin:20px 0 22px;
+    border-left:3px solid var(--gold);
+    padding-left:20px;
+  }
+  .sobre p{color:var(--ink-soft); margin-bottom:14px;}
+  .sobre .signature{font-family:'Cormorant Garamond', serif; font-style:italic; color:var(--green); font-size:1.1rem; margin-top:18px;}
+
+  @media (max-width:860px){
+    .sobre .wrap{grid-template-columns:1fr;}
+    .founder-photo{max-width:340px;}
+  }
+
+  /* ---------- Diferenciais ---------- */
+  .diferenciais-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:22px;
+  }
+  .dif-card{
+    background:#fff;
+    border:1px solid rgba(27,59,47,.08);
+    border-radius:var(--radius);
+    padding:26px 22px;
+    box-shadow:var(--shadow-soft);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .dif-card:hover{transform:translateY(-3px); box-shadow:0 16px 36px rgba(18,42,34,.12);}
+  .dif-card .icon{
+    width:46px; height:46px; border-radius:50%;
+    background:rgba(201,162,39,.14);
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.3rem; margin-bottom:16px;
+  }
+  .dif-card h3{font-size:1.15rem; color:var(--green); margin-bottom:8px;}
+  .dif-card p{font-size:.9rem; color:var(--ink-soft);}
+
+  /* ---------- Portfólio / Cardápio ---------- */
+  .portfolio{background:var(--green-dark); color:var(--cream);}
+  .portfolio .section-head p{color:#C7D0C9;}
+  .portfolio .eyebrow{color:var(--gold-light);}
+  .portfolio .section-head h2{color:var(--cream);}
+
+  .filter-row{
+    display:flex; gap:10px; flex-wrap:wrap; margin-bottom:34px;
+  }
+  .filter-pill{
+    padding:8px 18px; border-radius:999px; font-size:.82rem;
+    border:1px solid rgba(201,162,39,.4); color:#E4C568; cursor:pointer;
+    background:transparent; transition:background .15s, color .15s;
+  }
+  .filter-pill.active, .filter-pill:hover{background:var(--gold); color:var(--green-dark); border-color:var(--gold);}
+
+  .portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));
+    gap:22px;
+  }
+  .dish-card{
+    background:rgba(246,241,228,.03);
+    border:1px solid rgba(201,162,39,.22);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .dish-card:hover{transform:translateY(-4px); border-color:var(--gold); box-shadow:var(--shadow-soft-dark);}
+  .dish-thumb{
+    aspect-ratio:4/3;
+    position:relative;
+    background:linear-gradient(150deg, #1F4A3A, #0F241D 120%);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .dish-thumb .ph-icon{font-size:2.4rem; opacity:.55;}
+  .dish-tag{
+    position:absolute; top:10px; left:10px;
+    background:rgba(201,162,39,.9); color:var(--green-dark);
+    font-size:.65rem; letter-spacing:.04em; text-transform:uppercase;
+    padding:4px 10px; border-radius:999px; font-weight:600;
+  }
+  .dish-info{padding:16px 18px 20px;}
+  .dish-info h3{font-family:'Cormorant Garamond', serif; font-size:1.2rem; color:var(--cream); margin-bottom:4px;}
+  .dish-info p{font-size:.82rem; color:#B9C4BC; margin-bottom:10px;}
+  .dish-macros{display:flex; gap:14px; font-size:.7rem; color:var(--gold-light); letter-spacing:.02em;}
+
+  .portfolio-note{
+    margin-top:34px; padding:16px 20px; border:1px dashed rgba(201,162,39,.4);
+    border-radius:12px; font-size:.82rem; color:#C7D0C9;
+  }
+
+  /* ---------- Prova social ---------- */
+  .prova{background:var(--cream);}
+  .testi-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:22px;
+  }
+  .testi-card{
+    background:#fff; border-radius:var(--radius); padding:26px;
+    border:1px solid rgba(27,59,47,.08);
+    box-shadow:var(--shadow-soft);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .testi-card:hover{transform:translateY(-3px); box-shadow:0 16px 36px rgba(18,42,34,.12);}
+  .testi-stars{color:var(--gold); font-size:.9rem; margin-bottom:12px; letter-spacing:2px;}
+  .testi-card p.quote{font-size:.95rem; color:var(--ink); margin-bottom:16px;}
+  .testi-name{font-size:.82rem; color:var(--ink-soft); font-weight:600;}
+  .testi-role{font-size:.76rem; color:var(--ink-soft); opacity:.75;}
+
+  /* ---------- CTA / Lead form ---------- */
+  .cta{
+    background:linear-gradient(160deg, var(--green), var(--green-dark));
+    color:var(--cream);
+  }
+  .cta .wrap{
+    display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
+  }
+  .cta h2{color:var(--cream); font-size:clamp(1.8rem,3vw,2.4rem);}
+  .cta p{color:#C7D0C9; margin-top:14px; max-width:44ch;}
+  .cta-list{margin-top:24px; display:flex; flex-direction:column; gap:10px;}
+  .cta-list div{font-size:.88rem; color:#DCE4DE; display:flex; gap:10px; align-items:flex-start;}
+  .cta-list span.dot{color:var(--gold);}
+
+  form.lead{
+    background:rgba(246,241,228,.05);
+    border:1px solid rgba(201,162,39,.3);
+    border-radius:var(--radius);
+    padding:30px;
+    box-shadow:var(--shadow-soft-dark);
+  }
+  .field input:invalid:not(:placeholder-shown){border-color:#E08585;}
+  .field-error{display:none; font-size:.72rem; color:#F1A3A3; margin-top:6px;}
+  .field.has-error .field-error{display:block;}
+  .field.has-error input, .field.has-error select{border-color:#E08585;}
+  form.lead h3{font-family:'Cormorant Garamond', serif; font-size:1.35rem; color:var(--gold-light); margin-bottom:6px;}
+  form.lead p.small{font-size:.8rem; color:#B9C4BC; margin-bottom:20px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:.78rem; color:#DCE4DE; margin-bottom:6px; letter-spacing:.02em;}
+  .field input, .field select{
+    width:100%; padding:12px 14px; border-radius:8px;
+    border:1px solid rgba(201,162,39,.35);
+    background:rgba(9,20,16,.4);
+    color:var(--cream); font-family:'Jost', sans-serif; font-size:.9rem;
+  }
+  .field input::placeholder{color:#7C8A82;}
+  .field input:focus, .field select:focus{outline:none; border-color:var(--gold);}
+  form.lead .btn{width:100%; justify-content:center; margin-top:6px;}
+  .lead-status{font-size:.78rem; margin-top:12px; color:var(--gold-light); display:none;}
+
+  @media (max-width:900px){
+    .cta .wrap{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--green-dark); color:#B9C4BC; padding:44px 0 26px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px; align-items:center;}
+  footer .foot-brand{color:var(--gold-light); font-family:'Cormorant Garamond', serif; font-size:1.2rem;}
+  footer .foot-links{display:flex; gap:22px; font-size:.82rem;}
+  footer .foot-links a:hover{color:var(--gold-light);}
+  footer .foot-bottom{
+    margin-top:26px; padding-top:20px; border-top:1px solid rgba(201,162,39,.15);
+    text-align:center; font-size:.72rem; color:#7C8A82;
+  }
+
+  /* ---------- WhatsApp float ---------- */
+  .wa-float{
+    position:fixed; bottom:24px; right:24px; z-index:60;
+    background:var(--gold); color:var(--green-dark);
+    width:56px; height:56px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.5rem; box-shadow:0 10px 24px rgba(0,0,0,.25);
+    transition:transform .15s;
+  }
+  .wa-float:hover{transform:scale(1.08);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav wrap">
+    <div class="brand">
+      <!-- Substituir pelo arquivo real da logo, ex: assets/logo-adelina-martins.png -->
+      <img src="assets/logo-adelina-martins.png" alt="Adelina Martins Marmitas Fitness" class="brand-fallback" onerror="this.outerHTML = window.AM_MONOGRAM_SVG" />
+      <div class="brand-name">Adelina Martins <b>Marmitas Fitness</b></div>
+    </div>
+    <nav class="links">
+      <a href="#sobre">Sobre</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#portfolio">Cardápio</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-gold" href="#contato"><span class="long">Quero meu cardápio</span><span>📋</span></a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Marmitaria fitness · Serra/ES</span>
+      <h1>Sabor de verdade, <em>com prescrição de nutricionista</em> em cada marmita.</h1>
+      <p class="lead">Refeições equilibradas, feitas com ingredientes selecionados e entregues prontas para o seu dia — sem abrir mão do sabor de comida caseira.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#contato">Quero meu cardápio personalizado</a>
+        <a class="btn btn-outline" href="#portfolio">Ver o cardápio</a>
+      </div>
+      <div class="hero-badges">
+        <div><b>100%</b>Ingredientes selecionados</div>
+        <div><b>0</b>Conservantes</div>
+        <div><b>+150</b>Clientes atendidos</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <!-- Placeholder para foto principal da fundadora / prato -->
+      <div class="ph-icon">🥗</div>
+      <div class="ph-caption">Foto sugerida: prato montado ou fundadora preparando as marmitas</div>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="wrap">
+    <div class="founder-photo">
+      <div class="ph-icon">👩🏻‍🍳</div>
+      <div class="ph-caption">Foto sugerida: retrato da Adelina na cozinha</div>
+    </div>
+    <div>
+      <span class="eyebrow">A história por trás da marca</span>
+      <h2 style="color:var(--green); margin-top:10px; font-size:2rem;">De uma rotina corporativa exaustiva a um propósito de cuidar de quem não tem tempo de cuidar de si.</h2>
+      <blockquote>"Eu já estive exatamente onde você está — foi vivendo essa correria que criei a solução que eu mesma precisava."</blockquote>
+      <p>A vida corporativa ensinou muito, mas também mostrou o quanto é fácil deixar a própria saúde de lado por falta de tempo. A Adelina Martins nasceu dessa dor: entregar mais do que marmitas — entregar tempo, cuidado e sabor.</p>
+      <p>Hoje, cada cardápio é pensado para diferentes objetivos e pode seguir prescrição de nutricionista, para que você coma bem sem complicação nenhuma.</p>
+      <div class="signature">— Adelina Martins</div>
+    </div>
+  </div>
+</section>
+
+<section class="diferenciais" id="diferenciais">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Por que Adelina Martins</span>
+      <h2>Feito com cuidado, do preparo até a entrega</h2>
+      <p>Cada etapa pensada para levar mais saúde e praticidade para o seu dia — sem complicação.</p>
+    </div>
+    <div class="diferenciais-grid">
+      <div class="dif-card"><div class="icon">🥦</div><h3>Ingredientes selecionados</h3><p>Escolhidos com atenção, priorizando frescor e qualidade em cada prato.</p></div>
+      <div class="dif-card"><div class="icon">🧪</div><h3>Sem conservantes</h3><p>Comida de verdade, sem aditivos desnecessários.</p></div>
+      <div class="dif-card"><div class="icon">⚖️</div><h3>Balanceado e nutritivo</h3><p>Cardápios pensados para diferentes objetivos, com acompanhamento de nutricionista.</p></div>
+      <div class="dif-card"><div class="icon">📅</div><h3>Produzido diariamente</h3><p>Marmitas frescas, preparadas próximo à data de consumo.</p></div>
+      <div class="dif-card"><div class="icon">🚚</div><h3>Entrega programada</h3><p>Receba no dia e horário combinados, direto na sua casa ou trabalho.</p></div>
+      <div class="dif-card"><div class="icon">❤️</div><h3>Feito com muito amor</h3><p>Cada marmita preparada com o mesmo cuidado que a Adelina teria com a própria família.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Portfólio · Cardápio fixo</span>
+      <h2>Refeições para todo objetivo</h2>
+      <p>Escolha sua opção preferida entre frango, carne bovina, peixes, frutos do mar, carne suína, massas integrais e opções vegetarianas.</p>
+    </div>
+
+    <div class="filter-row">
+      <button class="filter-pill active" data-filter="todos">Todos</button>
+      <button class="filter-pill" data-filter="frango">Frango</button>
+      <button class="filter-pill" data-filter="carne">Carne Bovina</button>
+      <button class="filter-pill" data-filter="peixe">Peixes</button>
+      <button class="filter-pill" data-filter="suina">Carne Suína</button>
+      <button class="filter-pill" data-filter="massa">Massas</button>
+      <button class="filter-pill" data-filter="veg">Vegetarianas</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+      <div class="dish-card" data-cat="frango">
+        <div class="dish-thumb"><span class="dish-tag">Frango</span><div class="ph-icon">🍗</div></div>
+        <div class="dish-info">
+          <h3>Frango grelhado com legumes</h3>
+          <p>Arroz integral, legumes salteados e manjericão fresco.</p>
+          <div class="dish-macros"><span>250 kcal</span><span>31,5g prot.</span></div>
+        </div>
+      </div>
+      <div class="dish-card" data-cat="frango">
+        <div class="dish-thumb"><span class="dish-tag">Frango</span><div class="ph-icon">🍛</div></div>
+        <div class="dish-info">
+          <h3>Frango xadrez fit</h3>
+          <p>Com arroz integral e legumes coloridos.</p>
+          <div class="dish-macros"><span>Balanceado</span><span>Sem conservantes</span></div>
+        </div>
+      </div>
+      <div class="dish-card" data-cat="carne">
+        <div class="dish-thumb"><span class="dish-tag">Carne Bovina</span><div class="ph-icon">🍲</div></div>
+        <div class="dish-info">
+          <h3>Carne de panela com legumes</h3>
+          <p>Cozida lentamente, com batata e legumes frescos.</p>
+          <div class="dish-macros"><span>Alta proteína</span></div>
+        </div>
+      </div>
+      <div class="dish-card" data-cat="carne">
+        <div class="dish-thumb"><span class="dish-tag">Carne Bovina</span><div class="ph-icon">🍝</div></div>
+        <div class="dish-info">
+          <h3>Strogonoff fit de carne</h3>
+          <p>Com arroz integral, versão leve do clássico.</p>
+          <div class="dish-macros"><span>Cremoso e leve</span></div>
+        </div>
+      </div>
+      <div class="dish-card" data-cat="peixe">
+        <div class="dish-thumb"><span class="dish-tag">Peixes</span><div class="ph-icon">🐟</div></div>
+        <div class="dish-info">
+          <h3>Tilápia grelhada com legumes</h3>
+          <p>Leve, rica em ômega-3 e proteína magra.</p>
+          <div class="dish-macros"><span>Leve</span><span>Ômega-3</span></div>
+        </div>
+      </div>
+      <div class="dish-card" data-cat="peixe">
+        <div class="dish-thumb"><span class="dish-tag">Frutos do Mar</span><div class="ph-icon">🍤</div></div>
+        <div class="dish-info">
+          <h3>Bobó de camarão fit</h3>
+          <p>Com arroz integral, versão equilibrada do clássico.</p>
+          <div class="dish-macros"><span>Especial da semana</span></div>
+        </div>
+      </div>
+      <div class="dish-card" data-cat="suina">
+        <div class="dish-thumb"><span class="dish-tag">Carne Suína</span><div class="ph-icon">🍖</div></div>
+        <div class="dish-info">
+          <h3>Lombo suíno assado</h3>
+          <p>Com arroz integral e acompanhamentos frescos.</p>
+          <div class="dish-macros"><span>Rico em proteína</span></div>
+        </div>
+      </div>
+      <div class="dish-card" data-cat="massa">
+        <div class="dish-thumb"><span class="dish-tag">Massas</span><div class="ph-icon">🍝</div></div>
+        <div class="dish-info">
+          <h3>Lasanha fit de frango com ricota</h3>
+          <p>Massa integral, molho leve e recheio cremoso.</p>
+          <div class="dish-macros"><span>Comfort food fit</span></div>
+        </div>
+      </div>
+      <div class="dish-card" data-cat="veg">
+        <div class="dish-thumb"><span class="dish-tag">Vegetariana</span><div class="ph-icon">🍆</div></div>
+        <div class="dish-info">
+          <h3>Lasanha de berinjela</h3>
+          <p>Opção vegetariana, leve e cheia de sabor.</p>
+          <div class="dish-macros"><span>100% vegetal</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-note">
+      📸 As imagens dos pratos são placeholders — substituir por fotos reais dos produtos (embalagens, molhos caseiros e pratos montados) antes de publicar.
+    </div>
+  </div>
+</section>
+
+<section class="prova" id="depoimentos">
+  <div class="wrap">
+    <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow">Quem já experimentou</span>
+      <h2>Prova de que dá para comer bem, sem complicação</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="quote">"A comida dessa mulher é maravilhosa. Nunca imaginei que marmita fit pudesse ter esse sabor de comida de casa."</p>
+        <div class="testi-name">Cliente há 4 meses</div>
+        <div class="testi-role">Serra/ES</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="quote">"Finalmente consegui manter a rotina alimentar sem perder tempo cozinhando todo dia. O cardápio segue certinho o que minha nutricionista pediu."</p>
+        <div class="testi-name">Cliente há 2 meses</div>
+        <div class="testi-role">Serra/ES</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="quote">"Dá pra sentir o cuidado em cada detalhe, da embalagem ao tempero. Virou parte da minha semana."</p>
+        <div class="testi-name">Cliente há 6 meses</div>
+        <div class="testi-role">Serra/ES</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contato">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:var(--gold-light);">Vamos montar seu cardápio</span>
+      <h2>Conte seu objetivo e receba um cardápio personalizado</h2>
+      <p>Preencha os dados ao lado — a Adelina entra em contato direto pelo WhatsApp para entender sua rotina e montar o plano ideal.</p>
+      <div class="cta-list">
+        <div><span class="dot">●</span> Atendimento com prescrição de nutricionista</div>
+        <div><span class="dot">●</span> Entrega programada em Serra/ES</div>
+        <div><span class="dot">●</span> Sem fidelidade — comece quando quiser</div>
+      </div>
+    </div>
+
+    <form class="lead" id="leadForm">
+      <h3>Quero meu cardápio</h3>
+      <p class="small">Resposta em até 24h úteis, direto no seu WhatsApp.</p>
+
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+      </div>
+      <div class="field">
+        <label for="whatsapp">WhatsApp</label>
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(27) 9xxxx-xxxx" required />
+      </div>
+      <div class="field">
+        <label for="objetivo">Objetivo principal</label>
+        <select id="objetivo" name="objetivo">
+          <option value="Emagrecimento">Emagrecimento</option>
+          <option value="Ganho de massa muscular">Ganho de massa muscular</option>
+          <option value="Praticidade no dia a dia">Praticidade no dia a dia</option>
+          <option value="Alimentação equilibrada">Alimentação equilibrada</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-gold">Enviar e falar no WhatsApp</button>
+      <div class="lead-status" id="leadStatus"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">Adelina Martins <span style="color:#B9C4BC; font-family:'Jost',sans-serif; font-size:.85rem;">— Sabor, Nutrição &amp; Cuidado</span></div>
+    <div class="foot-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#portfolio">Cardápio</a>
+      <a href="https://instagram.com/am_marmitas" target="_blank" rel="noopener">@am_marmitas</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    Serra/ES · Encomendas via WhatsApp · © <span id="year"></span> Adelina Martins Marmitas Fitness
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20as%20marmitas%20fitness." target="_blank" rel="noopener" title="Falar no WhatsApp">💬</a>
+
+<script>
+  // Monograma provisório — substituir por assets/logo-adelina-martins.png (arquivo real do cliente)
+  window.AM_MONOGRAM_SVG = `
+    <svg class="brand-fallback" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Adelina Martins">
+      <circle cx="50" cy="50" r="47" fill="#1B3B2F"/>
+      <circle cx="50" cy="50" r="46.5" fill="none" stroke="#C9A227" stroke-width="1.4"/>
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#E4C568" stroke-width="0.6" opacity="0.55"/>
+      <text x="37" y="63" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="600" fill="none" stroke="#E4C568" stroke-width="1.2" text-anchor="middle" opacity="0.9">A</text>
+      <text x="61" y="63" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="700" fill="#C9A227" text-anchor="middle">M</text>
+      <line x1="30" y1="73" x2="70" y2="73" stroke="#C9A227" stroke-width="0.8" opacity="0.6"/>
+    </svg>`;
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Substituir pelo número real, formato internacional sem espaços: 5527XXXXXXXXX
+  const WHATSAPP_NUMBER = "55XXXXXXXXXXX";
+
+  // Filtro do portfólio
+  const pills = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('.dish-card');
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const filter = pill.dataset.filter;
+      cards.forEach(card => {
+        card.style.display = (filter === 'todos' || card.dataset.cat === filter) ? '' : 'none';
+      });
+    });
+  });
+
+  // Form -> abre WhatsApp com mensagem pronta
+  const form = document.getElementById('leadForm');
+  const status = document.getElementById('leadStatus');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const nomeField = document.getElementById('nome').closest('.field');
+  const whatsField = document.getElementById('whatsapp').closest('.field');
+
+  function validateLeadForm(){
+    let valid = true;
+    const nome = document.getElementById('nome').value.trim();
+    const whats = document.getElementById('whatsapp').value.trim();
+
+    nomeField.classList.toggle('has-error', nome.length < 2);
+    if (nome.length < 2) valid = false;
+
+    const whatsDigits = whats.replace(/\D/g, '');
+    whatsField.classList.toggle('has-error', whatsDigits.length < 10);
+    if (whatsDigits.length < 10) valid = false;
+
+    return valid;
+  }
+
+  document.getElementById('nome').addEventListener('blur', validateLeadForm);
+  document.getElementById('whatsapp').addEventListener('blur', validateLeadForm);
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!validateLeadForm()){
+      status.style.display = 'block';
+      status.style.color = '#F1A3A3';
+      status.textContent = 'Confira o nome e o WhatsApp antes de enviar.';
+      return;
+    }
+
+    const nome = document.getElementById('nome').value.trim();
+    const whats = document.getElementById('whatsapp').value.trim();
+    const objetivo = document.getElementById('objetivo').value;
+
+    const msg = `Olá! Me chamo ${nome}. Quero montar meu cardápio de marmitas fitness. Meu objetivo é: ${objetivo}. Meu WhatsApp: ${whats}`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '.65';
+    status.style.display = 'block';
+    status.style.color = 'var(--gold-light)';
+    status.textContent = 'Enviando...';
+
+    setTimeout(() => {
+      window.open(url, '_blank');
+      status.textContent = '✓ Pronto! Continue a conversa no WhatsApp que abriu.';
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '1';
+    }, 500);
+  });
+</script>
+
+</body>
+</html>
