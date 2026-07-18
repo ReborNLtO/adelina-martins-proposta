@@ -8,9 +8,9 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
   :root{
-    --green-dark:#122A22; --green:#1B3B2F; --gold:#C9A227; --gold-light:#E4C568;
-    --cream:#F6F1E4; --cream-warm:#EFE6D1; --ink:#1D2620; --ink-soft:#4A5750;
-    --radius:20px; --shadow-soft:0 10px 30px rgba(18,42,34,.08); --max:920px;
+    --green-dark:#332B27; --green:#463B36; --gold:#B4907C; --wine:#7B3B36; --sage:#4E5948; --gold-light:#D9C3B0;
+    --cream:#F2EBDC; --cream-warm:#EAE0D2; --ink:#2B2523; --ink-soft:#5C534D;
+    --radius:20px; --shadow-soft:0 10px 30px rgba(43,37,35,.08); --max:920px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'Jost',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;}
@@ -26,20 +26,20 @@
   header.cover p{color:#C7D0C9;font-size:.95rem;}
   header.cover .meta{margin-top:30px;font-size:.78rem;color:#9FB0A6;letter-spacing:.04em;}
 
-  nav.toc{background:var(--cream-warm);padding:24px 0;border-bottom:1px solid rgba(27,59,47,.1);}
+  nav.toc{background:var(--cream-warm);padding:24px 0;border-bottom:1px solid rgba(70,59,54,.1);}
   nav.toc .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;}
   nav.toc a{font-size:.82rem;color:var(--green);text-decoration:none;border-bottom:1px solid transparent;}
   nav.toc a:hover{border-color:var(--gold);}
 
-  section{padding:64px 0;border-bottom:1px solid rgba(27,59,47,.08);}
+  section{padding:64px 0;border-bottom:1px solid rgba(70,59,54,.08);}
   section:last-of-type{border-bottom:none;}
-  .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;color:var(--gold);font-weight:600;}
+  .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;color:var(--wine);font-weight:600;}
   h2{font-size:1.9rem;margin:8px 0 20px;}
   h3{font-size:1.25rem;margin:28px 0 10px;}
   p{color:var(--ink-soft);margin-bottom:12px;}
 
   .diag-table{width:100%;border-collapse:collapse;margin-top:16px;}
-  .diag-table th, .diag-table td{text-align:left;padding:12px 14px;font-size:.9rem;border-bottom:1px solid rgba(27,59,47,.08);}
+  .diag-table th, .diag-table td{text-align:left;padding:12px 14px;font-size:.9rem;border-bottom:1px solid rgba(70,59,54,.08);}
   .diag-table th{color:var(--green);font-weight:600;background:var(--cream-warm);}
 
   .card{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-soft);margin-bottom:20px;}
@@ -52,8 +52,8 @@
   .caption-box{background:var(--cream-warm);border-radius:14px;padding:16px 18px;margin-top:12px;font-size:.85rem;color:var(--ink-soft);white-space:pre-wrap;}
 
   .checklist{list-style:none;margin-top:14px;}
-  .checklist li{padding:8px 0 8px 28px;position:relative;font-size:.9rem;color:var(--ink-soft);border-bottom:1px solid rgba(27,59,47,.06);}
-  .checklist li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700;}
+  .checklist li{padding:8px 0 8px 28px;position:relative;font-size:.9rem;color:var(--ink-soft);border-bottom:1px solid rgba(70,59,54,.06);}
+  .checklist li::before{content:"✓";position:absolute;left:0;color:var(--sage);font-weight:700;}
 
   .pricing{background:linear-gradient(160deg,var(--green),var(--green-dark));color:var(--cream);border-radius:var(--radius);padding:40px;text-align:center;}
   .pricing h2{color:var(--cream);}
@@ -118,7 +118,7 @@
     <p>O sistema de marca não foi escolhido "no olho". Validamos paleta, tipografia e estilo com uma base de dados de design de mercado (161 paletas, 57 pares tipográficos, 67 estilos catalogados por setor), cruzando com o contexto real do negócio.</p>
     <ul class="checklist">
       <li>Estilo confirmado: <strong>Organic Biophilic</strong>, arquétipo reconhecido para marcas de alimentação orgânica/wellness</li>
-      <li>Paleta confirmada: <strong>Earth Green + Harvest Gold</strong>, arquétipo do setor agro/alimentação premium, mantendo os tons exatos da logo do cliente</li>
+      <li>Paleta definida: <strong>Charcoal + Vinho + Tan</strong> com verde sálvia de apoio, extraída do moodboard aprovado pelo cliente, transmitindo sofisticação com o toque natural do setor de alimentação saudável</li>
       <li>Tipografia confirmada: par <strong>Restaurant Menu</strong> (serifada elegante + sans limpa), padrão de culinária/hospitalidade</li>
       <li>Estrutura da landing page validada contra padrões de conversão (Hero + Prova Social + Captura de Lead)</li>
     </ul>
@@ -131,7 +131,7 @@
     <h2>Sistema de Marca</h2>
     <div class="card">
       <h4>Paleta</h4>
-      <p class="mono" style="font-size:.85rem;">Verde principal #1B3B2F · Verde escuro #122A22 · Dourado #C9A227 · Dourado claro #E4C568 · Creme #F6F1E4</p>
+      <p class="mono" style="font-size:.85rem;">Charcoal #463B36 · Vinho #7B3B36 · Tan #B4907C · Verde sálvia #4E5948 · Creme #F2EBDC</p>
     </div>
     <div class="card">
       <h4>Tipografia</h4>
@@ -169,7 +169,7 @@
       <h4>1 · Post de Apresentação (rebrand)</h4>
       <p class="obj">Objetivo: anunciar a nova identidade sem perder a voz pessoal da Adelina</p>
       <span class="prompt-label">Prompt de imagem</span>
-      <div class="prompt-box">Square 1:1 format. Elegant flat-lay product photo of a meal-prep container with grilled chicken, sweet potato and green beans, on a warm cream linen surface. Deep forest green (#1B3B2F) card overlay with soft rounded corners (organic, not sharp rectangle) in the bottom third, with gold (#C9A227) serif text rendered exactly: "Adelina Martins" / "Marmitas Fitness", plus a thin gold line separator. The meal-prep container itself has gently rounded edges. Soft natural window light casting a subtle organic shadow beneath the container, editorial food photography style, no other text.</div>
+      <div class="prompt-box">Square 1:1 format. Elegant flat-lay product photo of a meal-prep container with grilled chicken, sweet potato and green beans, on a warm cream linen surface. Deep forest green (#4E5948) card overlay with soft rounded corners (organic, not sharp rectangle) in the bottom third, with gold (#B4907C) serif text rendered exactly: "Adelina Martins" / "Marmitas Fitness", plus a thin gold line separator. The meal-prep container itself has gently rounded edges. Soft natural window light casting a subtle organic shadow beneath the container, editorial food photography style, no other text.</div>
       <div class="caption-box">Novo capítulo, mesma essência. 💚 A Adelina Martins ganhou uma nova cara, mas continua sendo a mesma cozinha feita com prescrição de nutricionista, ingredientes selecionados e muito cuidado. #AdelinaMartins #SaborNutricaoECuidado #MarmitaFitness</div>
     </div>
 
@@ -177,7 +177,7 @@
       <h4>2 · Diferencial: Prescrição de Nutricionista</h4>
       <p class="obj">Objetivo: comunicar o principal diferencial competitivo</p>
       <span class="prompt-label">Prompt de imagem</span>
-      <div class="prompt-box">Vertical 4:5 portrait format. Split composition: nutrition consultation notepad on the left, finished healthy meal-prep container on the right. Deep green (#122A22) background, gold (#C9A227) divider. Headline rendered exactly: "Cardápio com prescrição de nutricionista", inside a soft rounded-corner card casting a gentle natural shadow.</div>
+      <div class="prompt-box">Vertical 4:5 portrait format. Split composition: nutrition consultation notepad on the left, finished healthy meal-prep container on the right. Deep green (#3A4236) background, gold (#B4907C) divider. Headline rendered exactly: "Cardápio com prescrição de nutricionista", inside a soft rounded-corner card casting a gentle natural shadow.</div>
       <div class="caption-box">Aqui não é "achismo fit". 📋 Cada cardápio pode seguir a prescrição da SUA nutricionista. #PrescricaoNutricional #MarmitaFit #NutricaoDeVerdade</div>
     </div>
 
@@ -201,7 +201,7 @@
       <h4>5 · Prova Social</h4>
       <p class="obj">Objetivo: reforçar credibilidade com depoimento</p>
       <span class="prompt-label">Prompt de imagem</span>
-      <div class="prompt-box">Square 1:1 format. Soft rounded-corner quote card floating with a gentle natural shadow on deep green (#122A22), thin gold decorative frame. Text rendered exactly: "Finalmente consigo manter a rotina alimentar sem perder tempo cozinhando.", Cliente Adelina Martins. Five gold stars above.</div>
+      <div class="prompt-box">Square 1:1 format. Soft rounded-corner quote card floating with a gentle natural shadow on deep green (#3A4236), thin gold decorative frame. Text rendered exactly: "Finalmente consigo manter a rotina alimentar sem perder tempo cozinhando.", Cliente Adelina Martins. Five gold stars above.</div>
       <div class="caption-box">Isso é o que mais nos motiva. 💚 Se você também quer sentir essa diferença, chame no WhatsApp. #Depoimento #ResultadoReal</div>
     </div>
 
@@ -209,7 +209,7 @@
       <h4>6 · CTA Final (peça seu cardápio)</h4>
       <p class="obj">Objetivo: fechar o kit com chamada direta de conversão</p>
       <span class="prompt-label">Prompt de imagem</span>
-      <div class="prompt-box">Square 1:1 format. Deep green (#1B3B2F) background, gold circular badge with soft organic glow/shadow, text rendered exactly: "Peça seu cardápio". Thin gold botanical line-art leaves around it. Below: "Sabor, Nutrição &amp; Cuidado". Organic soft shadows only.</div>
+      <div class="prompt-box">Square 1:1 format. Deep green (#4E5948) background, gold circular badge with soft organic glow/shadow, text rendered exactly: "Peça seu cardápio". Thin gold botanical line-art leaves around it. Below: "Sabor, Nutrição &amp; Cuidado". Organic soft shadows only.</div>
       <div class="caption-box">Sua rotina saudável começa com uma mensagem. 📲 Link na bio para montar seu cardápio agora. #PecaSeuCardapio #MarmitaFit</div>
     </div>
   </div>
@@ -224,7 +224,7 @@
     <div class="card">
       <h4>1 · Regeneração Principal</h4>
       <span class="prompt-label">Prompt de imagem</span>
-      <div class="prompt-box">Square 1:1 format. Professional embossed gold foil logo on deep forest green (#1B3B2F) textured background. Crown-like interlocking gold "AM" monogram, clean symmetric linework. Symmetrical botanical line-art (rosemary, flowers, cherry tomatoes) both sides. Serif text rendered exactly: "ADELINA MARTINS" / "MARMITAS FITNESS". Bottom gold ribbon: "Sabor, Nutrição &amp; Cuidado". No typos, no asymmetry, high-end packaging photography lighting.</div>
+      <div class="prompt-box">Square 1:1 format. Professional embossed gold foil logo on deep forest green (#4E5948) textured background. Crown-like interlocking gold "AM" monogram, clean symmetric linework. Symmetrical botanical line-art (rosemary, flowers, cherry tomatoes) both sides. Serif text rendered exactly: "ADELINA MARTINS" / "MARMITAS FITNESS". Bottom gold ribbon: "Sabor, Nutrição &amp; Cuidado". No typos, no asymmetry, high-end packaging photography lighting.</div>
     </div>
     <div class="card">
       <h4>2 · Monograma Isolado (avatar/favicon)</h4>
@@ -234,7 +234,7 @@
     <div class="card">
       <h4>3 · Versão Fundo Claro</h4>
       <span class="prompt-label">Prompt de imagem</span>
-      <div class="prompt-box">Same logo composition redrawn in solid deep green (#1B3B2F) line-art on warm cream (#F6F1E4) background. Flat vector-style, print-ready.</div>
+      <div class="prompt-box">Same logo composition redrawn in solid deep green (#4E5948) line-art on warm cream (#F2EBDC) background. Flat vector-style, print-ready.</div>
     </div>
     <div class="card">
       <h4>4 · Versão Monocromática</h4>
